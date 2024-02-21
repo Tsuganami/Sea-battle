@@ -40,23 +40,22 @@ public class main {
 
     }
 
-        /*
-        System.out.print("A|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("B|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("C|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("D|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("E|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("F|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("G|_|_|_|_|_|_|_|)|_|_|\n");
-        System.out.print("H|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("I|_|_|_|_|_|_|_|_|_|_|\n");
-        System.out.print("G|_|_|_|_|_|_|_|_|_|_|\n");
-        */
+
     public static void main(String[] args){
         coordinate[][] battlefield = new coordinate[10][10];
         System.out.print("Welcome to the Sea battle.\n");
         System.out.print("Here is the battle field.\n");
         printBattleField(defaultBattleField(battlefield));
+        System.out.print("You need to place 10 ships.\n");
+        System.out.print("One Battleship: $$$$\n");
+        System.out.print("Two Cruisers: $$$\n");
+        System.out.print("Three Destroyers: $$\n");
+        System.out.print("Four Torpedo boats: $\n");
+
+        System.out.print("Put the coordinates for the bow of your battleship.");
+
+
+
     }
 
     }
