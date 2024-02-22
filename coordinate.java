@@ -1,4 +1,6 @@
 public class coordinate {
+    int x;
+    int y;
     State state = State.EMPTY;
     enum State{
         EMPTY,
