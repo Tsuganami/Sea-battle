@@ -1,3 +1,4 @@
+
 public class Ship {
     private Coordinate[] shipCoordinates;
     short ship_length;
@@ -37,7 +38,7 @@ public class Ship {
             if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
                 shipCoordinates[0] = new Coordinate(Coordinate.State.SHIP,xn,yn);
                 for(int i = 1; i < this.getLength();i++){
-                    if (is_horizontal) {
+                    if (! is_horizontal) {
                         shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn, yn+i);
                     }
                     else{

@@ -17,7 +17,7 @@ public class Coordinate {
         DESTROYED
     }
     boolean coordinateCheck(){
-        return ((this.x > 0 && this.x < 10) && (this.y > 0 && this.y < 10));
+        return ((this.x >= 0 && this.x < 10) && (this.y >= 0 && this.y < 10));
     }
     Coordinate(State state1, int x, int y){
         this.state = state1;

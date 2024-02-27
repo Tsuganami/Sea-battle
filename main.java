@@ -1,11 +1,13 @@
-public class Main {
+
+public class main {
 
     //function responsible for drawing the battlelfield
-    public void updateBattleField(Ship newShip, Coordinate[][] battlefield){
+    public static  void updateBattleField(Ship newShip, Coordinate[][] battlefield){
         Coordinate[] coordinates = newShip.getCoordinates();
 
         for (int i = 0; i<newShip.getLength();i++){
-            battlefield[newShip.getCoordinates()[i].getx()][newShip.getCoordinates()[i].gety()].state = Coordinate.State.SHIP;
+            Coordinate temp_coordinate = newShip.getCoordinates()[i];
+            battlefield[temp_coordinate.getx()][temp_coordinate.gety()].state = Coordinate.State.SHIP;
         }
     }
     public static void printBattleField(Coordinate[][] battlefield){
@@ -48,7 +50,9 @@ public class Main {
     }
 
 
-    public void main(String[] args){
+    public static void main(String[] args){
+
+        System.out.println("Hello World");
         Coordinate[][] battlefield = new Coordinate[10][10];
         System.out.print("Welcome to the Sea battle.\n");
         System.out.print("Here is the battle field.\n");
@@ -59,13 +63,13 @@ public class Main {
         System.out.print("Three Destroyers: $$\n");
         System.out.print("Four Torpedo boats: $\n");
 
-        System.out.print("Put the Coordinates for the bow of your battleship.");
-        //Ship testShip = Ship(0,0,false, Ship.ShipType.TORPEDOBOAT);
-        //updateBattleField(testShip, battlefield); fix this shit
+        System.out.print("Put the Coordinates for the bow of your battleship.\n");
+        Ship testShip = new Ship(1,1,true, Ship.ShipType.TORPEDOBOAT);
+        updateBattleField(testShip, battlefield);
         printBattleField(battlefield);
 
 
 
     }
 
-    }
+}
