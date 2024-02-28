@@ -1,12 +1,13 @@
-
+import java.util.Scanner;
 public class main {
+
 
     //function responsible for drawing the battlelfield
     public static  void updateBattleField(Ship newShip, Coordinate[][] battlefield){
         Coordinate[] coordinates = newShip.getCoordinates();
-
+        Coordinate temp_coordinate;
         for (int i = 0; i<newShip.getLength();i++){
-            Coordinate temp_coordinate = newShip.getCoordinates()[i];
+            temp_coordinate = coordinates[i];
             battlefield[temp_coordinate.getx()][temp_coordinate.gety()].state = Coordinate.State.SHIP;
         }
     }
@@ -49,7 +50,7 @@ public class main {
 
     }
 
-    public static int[] coordinateConverter(int x, char y){
+    public static int[] coordinateConverter(char y, int x){
         y = Character.toLowerCase(y);
         int[] coordinates = new int[2];
         int change = y;
@@ -61,9 +62,10 @@ public class main {
     }
 
     public static void main(String[] args){
-
-        System.out.println("Hello World");
         Coordinate[][] battlefield = new Coordinate[10][10];
+        Scanner scanner = new Scanner(System.in);
+
+        char coordintes[] = new char[2];
         System.out.print("Welcome to the Sea battle.\n");
         System.out.print("Here is the battle field.\n");
         printBattleField(defaultBattleField(battlefield));
@@ -73,15 +75,15 @@ public class main {
         System.out.print("Three Destroyers: $$\n");
         System.out.print("Four Torpedo boats: $\n");
 
-        System.out.print("Put the Coordinates for the bow of your battleship.\n");
+        System.out.print("Put the Coordinates for the bow of your battleship in the following format: A 1.\n");
+        String input = scanner.nextLine();
+        //coordintes = coordinateConverter(input.split(" ")[0].charAt(0),Integer.parseInt(input.split(" ")[1]);
         Ship testShip = new Ship(7,7,true, Ship.ShipType.CRUISER);
-        //updateBattleField(testShip, battlefield);
-        //printBattleField(battlefield);
-        int coordintes[] = new int[2];
+
+        updateBattleField(testShip, battlefield);
+        printBattleField(battlefield);
+
         //coordintes = coordinateConverter(1,'B');
-        //System.out.print(coordintes[0]);
-        //System.out.print("\n");
-        //System.out.print(coordintes[1]);
 
 
 

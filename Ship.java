@@ -33,12 +33,12 @@ public class Ship {
         else if (shipTypen == ShipType.CRUISER){
             this.shipCoordinates = new Coordinate[3];
             if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
-                for(int i = 1; i < this.getLength();i++){
+                for(int i = 0; i < this.getLength();i++){
                     if (! is_horizontal) {
-                        shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn, yn+i);
+                        shipCoordinates[i] = new Coordinate(Coordinate.State.SHIP, xn, yn+i);
                     }
                     else{
-                        shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn+i, yn);
+                        shipCoordinates[i] = new Coordinate(Coordinate.State.SHIP, xn+i, yn);
                     }
                 }
             }
@@ -50,7 +50,7 @@ public class Ship {
             this.shipCoordinates = new Coordinate[2];
             if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
                 shipCoordinates[0] = new Coordinate(Coordinate.State.SHIP,xn,yn);
-                for(int i = 1; i < this.getLength();i++){
+                for(int i = 0; i < this.getLength();i++){
                     if (! is_horizontal) {
                         shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn, yn+i);
                     }
