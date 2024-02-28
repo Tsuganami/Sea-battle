@@ -49,6 +49,16 @@ public class main {
 
     }
 
+    public static int[] coordinateConverter(int x, char y){
+        y = Character.toLowerCase(y);
+        int[] coordinates = new int[2];
+        int change = y;
+        coordinates[0] = (x - 1);
+        coordinates[1] = (change - 97);
+
+        return coordinates;
+
+    }
 
     public static void main(String[] args){
 
@@ -64,9 +74,14 @@ public class main {
         System.out.print("Four Torpedo boats: $\n");
 
         System.out.print("Put the Coordinates for the bow of your battleship.\n");
-        Ship testShip = new Ship(1,1,true, Ship.ShipType.TORPEDOBOAT);
-        updateBattleField(testShip, battlefield);
-        printBattleField(battlefield);
+        Ship testShip = new Ship(7,7,true, Ship.ShipType.CRUISER);
+        //updateBattleField(testShip, battlefield);
+        //printBattleField(battlefield);
+        int coordintes[] = new int[2];
+        //coordintes = coordinateConverter(1,'B');
+        //System.out.print(coordintes[0]);
+        //System.out.print("\n");
+        //System.out.print(coordintes[1]);
 
 
 

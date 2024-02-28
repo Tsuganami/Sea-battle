@@ -32,6 +32,19 @@ public class Ship {
         }
         else if (shipTypen == ShipType.CRUISER){
             this.shipCoordinates = new Coordinate[3];
+            if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
+                for(int i = 1; i < this.getLength();i++){
+                    if (! is_horizontal) {
+                        shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn, yn+i);
+                    }
+                    else{
+                        shipCoordinates[1] = new Coordinate(Coordinate.State.SHIP, xn+i, yn);
+                    }
+                }
+            }
+            else{
+                System.out.print("Ship position is not valid.");
+            }
         }
         else if (shipTypen == ShipType.DESTROYER){
             this.shipCoordinates = new Coordinate[2];
