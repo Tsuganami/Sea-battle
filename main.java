@@ -65,7 +65,7 @@ public class main {
         Coordinate[][] battlefield = new Coordinate[10][10];
         Scanner scanner = new Scanner(System.in);
 
-        char coordintes[] = new char[2];
+        int coordintes[] = new int[2];
         System.out.print("Welcome to the Sea battle.\n");
         System.out.print("Here is the battle field.\n");
         printBattleField(defaultBattleField(battlefield));
@@ -77,8 +77,8 @@ public class main {
 
         System.out.print("Put the Coordinates for the bow of your battleship in the following format: A 1.\n");
         String input = scanner.nextLine();
-        //coordintes = coordinateConverter(input.split(" ")[0].charAt(0),Integer.parseInt(input.split(" ")[1]);
-        Ship testShip = new Ship(7,7,true, Ship.ShipType.CRUISER);
+        coordintes = coordinateConverter(input.split(" ")[0].charAt(0),Integer.parseInt(input.split(" ")[1]));
+        Ship testShip = new Ship(coordintes[0],coordintes[1],true, Ship.ShipType.TORPEDOBOAT);
 
         updateBattleField(testShip, battlefield);
         printBattleField(battlefield);
