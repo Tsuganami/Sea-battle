@@ -74,7 +74,7 @@ public class Ship {
                 System.out.print("Ship position is not valid.");
             }
         }
-        else if (shipTypen == ShipType.DESTROYER){
+        else if (input.split(" ")[3].toLowerCase() == "d"){
             this.shipCoordinates = new Coordinate[2];
             if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
                 shipCoordinates[0] = new Coordinate(Coordinate.State.SHIP,xn,yn);
@@ -93,7 +93,7 @@ public class Ship {
             }
 
         }
-        else if (shipTypen == ShipType.TORPEDOBOAT){
+        else if (input.split(" ")[3].toLowerCase() == "t"){
             this.shipCoordinates = new Coordinate[1];
             if (new Coordinate(Coordinate.State.SHIP,xn,yn).coordinateCheck()){
                 shipCoordinates[0] = new Coordinate(Coordinate.State.SHIP,xn,yn);
