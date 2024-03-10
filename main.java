@@ -73,7 +73,7 @@ public class main {
         updateBattleField(testShip, battlefield);
         printBattleField(battlefield);
 
-        //coordintes = coordinateConverter(1,'B');
+
 
 
 

@@ -4,7 +4,7 @@ public class Ship {
     private Coordinate[] shipCoordinates;
     short ship_length;
     boolean is_horizontal;
-    private ShipType shipType;
+    private ShipType shipType = ShipType.CRUISER;
 
     int coordintes[] = new int[2];
 
@@ -45,10 +45,11 @@ public class Ship {
         System.out.print("B for 4-squares ship, C for 3-squares ship , D for 2-squares ship, T for 1-square ship\n");
         String input = scanner.nextLine();
         coordintes = coordinateConverter(input.split(" ")[0].charAt(0),Integer.parseInt(input.split(" ")[1]));
-        if (input.split(" ")[2].toLowerCase() == "h" || input.split(" ")[2].toLowerCase() == "v" ){
+        if (input.split(" ")[2].toLowerCase().equals("h")|| input.split(" ")[2].toLowerCase().equals("v")){
             this.is_horizontal = input.split(" ")[2] == "H";
         }
         else{
+            System.out.println(input.split(" ")[2].toLowerCase());
             throw new IllegalArgumentException("Unknown ship position flag");
         }
 
